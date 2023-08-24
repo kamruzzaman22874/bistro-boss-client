@@ -1,7 +1,7 @@
 import cheif from "../assets/home/chef-service.jpg"
 const BistroBoss = () => {
     return (
-        <div className="mb-24 w-full  h-96" style={{ backgroundImage: `url(${cheif})` }}>
+        <div className="mb-24 w-full bg-fixed h-96" style={{ backgroundImage: `url(${cheif})` }}>
             <div className="text-center md:w-3/4 mx-auto  md:pt-16 pt-24">
                 <div className="md:pt-12 md:py-20 bg-white rounded ">
                     <h2 className="text-3xl mb-3 uppercase">Bistro Boss</h2>
