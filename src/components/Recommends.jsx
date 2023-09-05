@@ -29,6 +29,9 @@ const Recommends = () => {
                     ></Recommend>)
                 }
             </div>
+            <div className="flex justify-center my-8">
+                <button className="btn border-b-2 border-b-orange-600 hover:border-b-orange-500 hover:bg-black hover:text-white">View Full Menu</button>
+            </div>
         </section>
     );
 };

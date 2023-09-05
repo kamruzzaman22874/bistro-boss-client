@@ -1,12 +1,32 @@
+import { FaShoppingCart } from 'react-icons/fa';
 import { Link } from "react-router-dom";
+import useCart from "../../../hooks/useCart";
+import useAuth from "../../../hooks/useAuth";
 
 const Navbar = () => {
+    const {user, logOut} = useAuth()
+    const [cart] = useCart()
+
+    const handleLogout =() =>{
+        logOut()
+        .then(() =>{})
+        .catch(err => console.log(err));
+    }
     const navItem = <>
         <li><Link to="/">Home</Link></li>
+        <li><Link to="/menu">Our Menu</Link></li>
+        <li><Link to="/order/salad">Order Food</Link></li>
         <li><Link to="/contact">Contact Us</Link></li>
         <li><Link to="/dashboard">Dashboard</Link></li>
-        <li><Link to="/menu">Our Menu</Link></li>
-        <li><Link to="/shop">Our Shop</Link></li>
+        <li><Link to="/dashboard/myCart">
+            <button className="btn">
+            <FaShoppingCart/>
+                <div className="badge badge-secondary">+{cart.length || 0}</div>
+            </button> </Link>
+        </li>
+
+        {/* <li><Link to="/dashboard">Dashboard</Link></li>
+        <li><Link to="/shop">Our Shop</Link></li> */}
     </>
     return (
         <>
@@ -30,12 +50,20 @@ const Navbar = () => {
                         {navItem}
                     </ul>
                 </div>
-                <div className="navbar-end">
-                    <a className="btn">Button</a>
-                </div>
+                {
+                    user ? 
+                        <>
+                        <button onClick={handleLogout} className="btn border-b-2 border-b-orange-600 hover:border-b-orange-500 hover:bg-black hover:text-white px-10">Logout</button></> : 
+                                <Link to="/login" className="btn border-b-2 border-b-orange-600 hover:border-b-orange-500 hover:bg-black hover:text-white px-10">
+                                    Login
+                                </Link>
+                }
             </div>
         </>
     );
 };
 
 export default Navbar;
+
+
+
