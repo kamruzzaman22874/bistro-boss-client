@@ -1,4 +1,4 @@
-import {createBrowserRouter,} from "react-router-dom";
+import { createBrowserRouter, } from "react-router-dom";
 import MainLayout from "../layouts/MainLayout";
 import Home from "../pages/Home/Home/Home";
 import Menu from "../pages/Menu/Menu/Menu";
@@ -17,20 +17,20 @@ import UserHome from "../components/UserHome";
 export const router = createBrowserRouter([
     {
         path: "/",
-        element: <MainLayout/>,
+        element: <MainLayout />,
         children: [
             {
                 path: "/",
-                element: <Home/>
+                element: <Home />
             },
-            
+
             {
                 path: "/menu",
-                element: <Menu/>
+                element: <Menu />
             },
             {
                 path: "/order/:category",
-                element: <Order/>
+                element: <Order />
             },
             {
                 path: "/contact",
@@ -38,22 +38,22 @@ export const router = createBrowserRouter([
             },
             {
                 path: "/signup",
-                element: <SignUp/>
+                element: <SignUp />
             },
             {
                 path: "/login",
-                element: <Login/>
+                element: <Login />
             }
 
         ]
     },
     {
-        path:"/dashboard",
+        path: "/dashboard",
         element: <PrivateRoutes><DashboardLayout /></PrivateRoutes>,
         children: [
             {
                 path: "myCart",
-                element: <MyCart/>
+                element: <MyCart />
             },
             {
                 path: "home",
@@ -61,11 +61,11 @@ export const router = createBrowserRouter([
             },
             {
                 path: "allusers",
-                element: <AllUsers/>
+                element: <AllUsers />
             },
             {
                 path: "addItem",
-                element: <AdminRoutes><AddItem/></AdminRoutes>
+                element: <AdminRoutes><AddItem /></AdminRoutes>
             }
         ]
     }

@@ -20,7 +20,7 @@ const useAxiosSecure = () => {
                 config.headers.Authorization = `Bearer ${ token }`;
             }
             return config;
-        });
+        }, []);
 
         axiosSecure.interceptors.response.use(
             (response) => response,

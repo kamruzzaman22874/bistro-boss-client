@@ -2,11 +2,11 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import bgImg from "../../assets/others/authentication.png"
 import loginImg from "../../assets/others/authentication2.png"
 import { loadCaptchaEnginge, LoadCanvasTemplate } from 'react-simple-captcha';
-import { useEffect } from "react";
 import { Helmet } from "react-helmet-async";
 import Swal from "sweetalert2";
 import SocialLogin from "../shared/SocialLogin/SocialLogin";
 import useAuth from "../../hooks/useAuth";
+import { useEffect } from 'react';
 const Login = () => {
     const { userLogin } = useAuth()
     // const [disabled, setDisabled] = useState(true);
