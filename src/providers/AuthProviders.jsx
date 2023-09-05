@@ -4,10 +4,11 @@ import { createContext, useEffect, useState } from "react";
 import axios from "axios";
 
 const auth = getAuth(app)
-export const AuthContext = createContext(null)
+export const AuthContext = createContext()
 const AuthProviders = ({ children }) => {
     const [user, setUser] = useState(null)
     const [loading, setLoading] = useState(true)
+
     const googleProvider = new GoogleAuthProvider();
 
     const createUser = (email, password) => {
@@ -32,7 +33,6 @@ const AuthProviders = ({ children }) => {
     }
 
     const logOut = () => {
-        setLoading(true)
         return signOut(auth)
     }
 
@@ -43,9 +43,10 @@ const AuthProviders = ({ children }) => {
                 setLoading(false)
                 axios.post("http://localhost:8000/jwt", { email: currentUser?.email })
                     .then(data => {
-                        // console.log(data.data);
-                        localStorage.setItem("access-token", data?.data.token);
-                        setLoading(false)
+                        if (data.data) {
+                            localStorage.setItem("access-token", data?.data.token);
+                            setLoading(false)
+                        }
                     })
             }
             else {
@@ -69,8 +70,8 @@ const AuthProviders = ({ children }) => {
         logOut
     }
     return (
-        <AuthContext.Provider value={authInfo}>
-            {children}
+        <AuthContext.Provider value={ authInfo }>
+            { children }
         </AuthContext.Provider>
     );
 };

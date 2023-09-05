@@ -8,7 +8,7 @@ import SocialLogin from "../shared/SocialLogin/SocialLogin";
 import useAuth from "../../hooks/useAuth";
 const SignUp = () => {
     const { register, handleSubmit, reset, formState: { errors } } = useForm();
-    const { createUser, userUpdateProfile} = useAuth();
+    const { createUser, userUpdateProfile } = useAuth();
     const navigate = useNavigate()
 
     const onSubmit = data => {
@@ -17,8 +17,8 @@ const SignUp = () => {
                 const loggedUser = result.user;
                 console.log(loggedUser);
                 userUpdateProfile(data.name, data.photo)
-                .then(() => {
-                        const usersInfo = { name: data.name, email: data.email , image: data.photo }
+                    .then(() => {
+                        const usersInfo = { name: data.name, email: data.email, image: data.photo }
 
                         fetch("http://localhost:8000/users", {
                             method: 'POST',
@@ -56,13 +56,13 @@ const SignUp = () => {
             <Helmet>
                 <title>Bistro Boss| Signup</title>
             </Helmet>
-            <div className="bg-cover bg-center  bg-opacity-50 p-24" style={{ backgroundImage: `url(${bgImg})` }}>
+            <div className="bg-cover bg-center  bg-opacity-50 p-24" style={ { backgroundImage: `url(${ bgImg })` } }>
                 <div className="border-4 shadow-2xl p-16 flex justify-center items-center">
                     <div className="md:w-1/2">
                         <h2 className="text-2xl font-semibold mb-4 px-10">Signup</h2>
                         <div className="flex">
                             <div className="p-8 rounded shadow-md w-96">
-                                <form onSubmit={handleSubmit(onSubmit)}>
+                                <form onSubmit={ handleSubmit(onSubmit) }>
                                     <div className="mb-4">
                                         <label htmlFor="name" className="block text-sm font-medium text-gray-700">
                                             Name
@@ -71,10 +71,10 @@ const SignUp = () => {
                                             type="text"
                                             id="name"
                                             name="name"
-                                            {...register("name", { required: true })}
+                                            { ...register("name", { required: true }) }
                                             className="mt-1 p-2 w-full border rounded-md focus:ring focus:ring-indigo-300"
                                         />
-                                        {errors.name && <span className="text-red-500 font-bold">Name field is required</span>}
+                                        { errors.name && <span className="text-red-500 font-bold">Name field is required</span> }
                                     </div>
                                     <div className="mb-4">
                                         <label htmlFor="name" className="block text-sm font-medium text-gray-700">
@@ -83,10 +83,10 @@ const SignUp = () => {
                                         <input
                                             type="text"
                                             id="name"
-                                            {...register("photo", { required: true })}
+                                            { ...register("photo", { required: true }) }
                                             className="mt-1 p-2 w-full border rounded-md focus:ring focus:ring-indigo-300"
                                         />
-                                        {errors.photo && <span className="text-red-500 font-bold">Photo URL field is required</span>}
+                                        { errors.photo && <span className="text-red-500 font-bold">Photo URL field is required</span> }
                                     </div>
                                     <div className="mb-4">
                                         <label htmlFor="email" className="block text-sm font-medium text-gray-700">
@@ -96,10 +96,10 @@ const SignUp = () => {
                                             type="email"
                                             id="email"
                                             name="email"
-                                            {...register("email", { required: true })}
+                                            { ...register("email", { required: true }) }
                                             className="mt-1 p-2 w-full border rounded-md focus:ring focus:ring-indigo-300"
                                         />
-                                        {errors.email && <span className="text-red-500 font-bold">Email field is required</span>}
+                                        { errors.email && <span className="text-red-500 font-bold">Email field is required</span> }
                                     </div>
                                     <div className="mb-4">
                                         <label htmlFor="password" className="block text-sm font-medium text-gray-700">
@@ -109,18 +109,18 @@ const SignUp = () => {
                                             type="password"
                                             id="password"
                                             name="password"
-                                            {...register("password",
+                                            { ...register("password",
                                                 {
                                                     required: true,
                                                     minLength: 6,
                                                     maxLength: 20,
                                                     pattern: /(?=.*[A-Z])(?=.*[!@#$&*])(?=.*[0-9])(?=.*[a-z])/
-                                                })}
+                                                }) }
                                             className="mt-1 p-2 w-full border rounded-md focus:ring focus:ring-indigo-300"
                                         />
-                                        {errors.password?.type === "minLength" && <span className="text-red-500 font-bold">Password field is required</span>}
-                                        {errors.password?.type === "maxLength" && <span className="text-red-500 font-bold">Password field is required</span>}
-                                        {errors.password?.type === "pattern" && <span className="text-red-500 font-bold">Password must have one uppercase, one lowercase,one number and one special character</span>}
+                                        { errors.password?.type === "minLength" && <span className="text-red-500 font-bold">Password field is required</span> }
+                                        { errors.password?.type === "maxLength" && <span className="text-red-500 font-bold">Password field is required</span> }
+                                        { errors.password?.type === "pattern" && <span className="text-red-500 font-bold">Password must have one uppercase, one lowercase,one number and one special character</span> }
 
                                     </div>
                                     <div className="text-center">
@@ -128,15 +128,16 @@ const SignUp = () => {
                                     </div>
                                     <p className="text-center text-orange-500">Already have an account ? <Link className="underline" to="/login">Login</Link></p>
                                     <div className="divider">OR Sign up With</div>
-                                    
-                                        <SocialLogin  />
-                                    
+
+
                                 </form>
+
+                                <SocialLogin />
                             </div>
                         </div>
                     </div>
                     <div className="md:w-1/2 bg-none">
-                        <img src={loginImg} alt="" />
+                        <img src={ loginImg } alt="" />
                     </div>
                 </div>
             </div>

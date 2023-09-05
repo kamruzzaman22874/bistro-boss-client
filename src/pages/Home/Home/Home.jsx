@@ -14,14 +14,14 @@ const Home = () => {
             <Helmet>
                 <title>Bistro Boss| Home</title>
             </Helmet>
-            <Banner/>
-            <Category/>
-            <BistroBoss/>
-            <PopularMenu/>
-            <ContactUs/>
-            <Recommends/>
-            <Featured/>
-            <Testimonials/>
+            <Banner />
+            <Category />
+            <BistroBoss />
+            <PopularMenu />
+            <ContactUs />
+            <Recommends />
+            <Featured />
+            <Testimonials />
         </div>
     );
 };
