@@ -40,7 +40,12 @@ const ManageItem = () => {
             }
         })
     }
-
+    const handleUpdate = (id) => {
+        axios.get(`http://localhost:8000/menu/${id}`,)
+        .then(res => {
+            console.log(res.data,id);
+        })
+    }
 
     return (
         <div className="w-full">
@@ -86,7 +91,7 @@ const ManageItem = () => {
                                 </td>
                                 <td>{item.price}</td>
                                 <td>
-                                    <button onClick={() => (document.getElementById('my_modal_3').showModal())} className="p-2 rounded text-white text-xl bg-orange-400"><FaEdit /> </button>
+                                    <button onClick={() => (document.getElementById('my_modal_3').showModal(), handleUpdate(item._id))} className="p-2 rounded text-white text-xl bg-orange-400"><FaEdit /> </button>
                                 </td>
                                 <td>
                                     <button onClick={() => handleDelete(item)} className="p-2 rounded text-white text-xl bg-red-600"><AiTwotoneDelete /></button>
