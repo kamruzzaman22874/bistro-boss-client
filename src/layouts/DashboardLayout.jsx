@@ -57,7 +57,7 @@ const DashboardLayout = () => {
                                 </NavLink>
                             </li>
                             <li className="dark:bg-gray-800 dark:text-gray-50">
-                                <NavLink to="/dashboard/item" rel="noopener noreferrer" href="#" className="flex items-center p-2 space-x-3 rounded-md">
+                                <NavLink to="/dashboard/manageitem" rel="noopener noreferrer" href="#" className="flex items-center p-2 space-x-3 rounded-md">
                                     <div className="flex items-center gap-2">
                                         <AiOutlineBars className="text-lg" />
                                         <span>Manage Items</span>

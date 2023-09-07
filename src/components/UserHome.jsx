@@ -6,8 +6,7 @@ import useCart from "../hooks/useCart";
 
 const UserHome = () => {
     const { user } = useAuth()
-    const [cart] = useCart
-    ()
+    const [cart] = useCart();
     return (
         <div className="my-8 p-5">
             <h2 className="text-3xl font-bold text-center uppercase">Welcome ! Mr. <span className="text-blue-500">{user.displayName}</span></h2>
