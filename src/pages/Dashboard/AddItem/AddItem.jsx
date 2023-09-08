@@ -1,7 +1,6 @@
 import { useForm } from "react-hook-form";
 import SectionTitle from "../../../components/SectionTitle";
 import { BsFillRocketTakeoffFill } from "react-icons/bs"
-import useCart from "../../../hooks/useCart";
 import axios from "axios";
 import Swal from "sweetalert2";
 
@@ -52,34 +51,6 @@ const AddItem = () => {
                 heading="ADD AN ITEM"
             ></SectionTitle>
             <div className="bg-orange-50 p-8 w-3/4 mx-auto">
-                {/* <form onSubmit={handleSubmit(onSubmit)}>
-                    <label htmlFor="">Recipe Name</label> <br />
-                    <input className="w-full mb-5 p-2" placeholder="name" {...register("name")} />
-
-                    <div className="flex w-full">
-                        <div className="w-1/2">
-                            <label htmlFor="">Category</label>
-                            <select className="w-full p-2" {...register("category",{required:true})}>
-                                <option value="female">Pizza</option>
-                                <option value="male">Soup</option>
-                                <option value="other">Salad</option>
-                                <option value="other">Dessert</option>
-                                <option value="other">Drinks</option>
-                            </select>
-                        </div>
-                        <div className="w-1/2 ml-2">
-                            <label htmlFor="">Price</label>
-                            <input className="w-full mb-5 p-2" placeholder="price" {...register("price", {required:true})} />
-                        </div>
-                    </div>
-                    <div>
-                        <label htmlFor="">Recipe Details</label> <br />
-                        <textarea  placeholder="Recipe Details" {...register("recipe", { required: true })} className="w-full p-2" name="" id="" cols="30" rows="10"></textarea>
-                    </div>
-                    <input className="my-5" type="file" {...register("image", { required: true })}/> <br />
-                    {errors.exampleRequired && <span>This field is required</span>}
-                    <input className="btn px-10 border-b-4 hover:border-b-purple-300 border-b-orange-600 hover:bg-black hover:text-white text-orange-500" type="submit" value="submit" />
-                </form> */}
                 <form onSubmit={handleSubmit(AddMenuItem)} className="mb-0 space-y-4 rounded-lg p-4">
                     <div className="form-control w-full">
                         <label htmlFor="name" className="label">

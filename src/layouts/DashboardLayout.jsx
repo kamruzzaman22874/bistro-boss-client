@@ -21,7 +21,7 @@ const DashboardLayout = () => {
 
     return (
         <div className="grid md:grid-cols-12  md:w-full">
-            <div className="h-full dashboard col-span-2 p-2 space-y-2  bg-[#D1A054] dark:bg-gray-900 dark:text-gray-100">
+            <div className="h-full dashboard col-span-3 p-2 space-y-2  bg-[#D1A054] dark:bg-gray-900 dark:text-gray-100">
                 <div className="text-center text-xl  text-white rounded font-bold">
                     <h2> Bistro Boss</h2>
                     <h2 className="text-white">Reastaurant</h2>
@@ -41,7 +41,7 @@ const DashboardLayout = () => {
                         isAdmin ? <>
                         <ul className="pt-2 pb-4 space-y-1 text-sm">
                             <li className="dark:bg-gray-800 dark:text-gray-50">
-                                <NavLink to="/dashboard/home" rel="noopener noreferrer" href="#" className="flex items-center p-2 space-x-3 rounded-md">
+                                <NavLink to="/dashboard/adminhome" rel="noopener noreferrer" href="#" className="flex items-center p-2 space-x-3 rounded-md">
                                     <div className="flex items-center gap-2">
                                         <AiFillHome className="text-lg" />
                                         <span>Admin Home</span>
@@ -97,7 +97,7 @@ const DashboardLayout = () => {
                         <>
                             <ul className="pt-2 pb-4 space-y-1 text-sm">
                                 <li className="dark:bg-gray-800 dark:text-gray-50">
-                                    <NavLink to="/dashboard/home" rel="noopener noreferrer" href="#" className="flex items-center p-2 space-x-3 rounded-md">
+                                    <NavLink to="/dashboard/userhome" rel="noopener noreferrer" href="#" className="flex items-center p-2 space-x-3 rounded-md">
                                         <div className="flex items-center gap-2">
                                             <AiFillHome className="text-lg" />
                                             <span>User Home</span>
@@ -105,7 +105,7 @@ const DashboardLayout = () => {
                                     </NavLink>
                                 </li>
                                 <li className="dark:bg-gray-800 dark:text-gray-50">
-                                    <NavLink to="/dashboard/resservation" rel="noopener noreferrer" href="#" className="flex items-center p-2 space-x-3 rounded-md">
+                                    <NavLink to="/dashboard/bookingtable" rel="noopener noreferrer" href="#" className="flex items-center p-2 space-x-3 rounded-md">
                                         <div className="flex items-center gap-2">
                                             <SlCalender className="text-lg" />
                                             <span>Resservation</span>
@@ -130,7 +130,7 @@ const DashboardLayout = () => {
                                     </NavLink>
                                 </li>
                                 <li>
-                                    <NavLink to="/dashboard/review" rel="noopener noreferrer" href="#" className="flex items-center p-2 space-x-3 rounded-md">
+                                    <NavLink to="/dashboard/reviews" rel="noopener noreferrer" href="#" className="flex items-center p-2 space-x-3 rounded-md">
 
                                         <div className="flex items-center gap-2">
                                             <MdReviews className="text-lg" />
@@ -139,7 +139,7 @@ const DashboardLayout = () => {
                                     </NavLink>
                                 </li>
                                 <li className="dark:bg-gray-800 dark:text-gray-50">
-                                    <NavLink to="/dashboard/booking" rel="noopener noreferrer" href="#" className="flex items-center p-2 space-x-3 rounded-md">
+                                    <NavLink to="/dashboard/bookings" rel="noopener noreferrer" href="#" className="flex items-center p-2 space-x-3 rounded-md">
                                         <div className="flex items-center gap-2">
                                             <FaCalendarAlt className="text-lg" />
                                             <span>My Booking</span>
@@ -186,7 +186,7 @@ const DashboardLayout = () => {
                     </ul>
                 </div>
             </div>
-            <div className="col-span-10 w-full ml-8">
+            <div className="col-span-9 w-full ml-5">
                 <Outlet />
             </div>
         </div>

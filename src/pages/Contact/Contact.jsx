@@ -5,6 +5,7 @@ import { LuPhoneCall } from 'react-icons/lu';
 import { GrLocation } from 'react-icons/gr';
 import { AiOutlineClockCircle } from 'react-icons/ai';
 import ContactForm from "./ContactForm";
+import Location from "../Location/Location";
 
 
 const Contact = () => {
@@ -12,7 +13,7 @@ const Contact = () => {
         <div>
             <Cover img={contactImg} title={"Contact us"}></Cover>
             <SectionTitle subHeading={"Visit Us"} heading={"OUR LOCATION"}></SectionTitle>
-            <div className="grid md:grid-cols-3 w-1/2 mx-auto mb-10 p-5">
+            {/* <div className="grid md:grid-cols-3 w-1/2 mx-auto mb-10 p-5">
 
                 <div className="card w-48 bg-orange-100 shadow-xl">
                     <div className="bg-orange-200 text-center text-white flex justify-center p-4">
@@ -41,6 +42,10 @@ const Contact = () => {
                         <p>+88 01989214721</p>
                     </div>
                 </div>
+            </div> */}
+
+            <div className="w-3/4 mx-auto">
+                <Location />
             </div>
             <ContactForm/>
         </div>

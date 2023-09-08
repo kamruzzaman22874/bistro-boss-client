@@ -19,13 +19,13 @@ const Navbar = () => {
         <li><Link to="/menu">Our Menu</Link></li>
         <li><Link to="/order/salad">Order Food</Link></li>
         <li><Link to="/contact">Contact Us</Link></li>
-        <li><Link to="/dashboard">Dashboard</Link></li>
+        <li><Link to={isAdmin ? "/dashboard/adminhome" : "/dashboard/userhome"}>Dashboard</Link></li>
         {
             !isAdmin ? <li><Link to="/dashboard/myCart">
-                <button className="btn">
-                    <FaShoppingCart />
+                <span className="flex items-center px-3 py-1 rounded border-b-2 border-b-orange-600 hover:border-b-orange-500 hover:bg-black hover:text-white">
+                    <FaShoppingCart className='text-lg' />
                     <div className="badge badge-secondary">+{cart.length || 0}</div>
-                </button> </Link>
+                </span> </Link>
             </li> :""
         }
 
@@ -57,8 +57,8 @@ const Navbar = () => {
                 {
                     user ? 
                         <>
-                        <button onClick={handleLogout} className="btn border-b-2 border-b-orange-600 hover:border-b-orange-500 hover:bg-black hover:text-white px-10">Logout</button></> : 
-                                <Link to="/login" className="btn border-b-2 border-b-orange-600 hover:border-b-orange-500 hover:bg-black hover:text-white px-10">
+                            <span onClick={handleLogout} className="border-b-2 border-b-orange-600 hover:border-b-orange-500 hover:bg-black hover:text-white px-10 py-1 rounded cursor-pointer">Logout</span></> : 
+                                <Link to="/login" className="py-1 rounded border-b-2 border-b-orange-600 hover:border-b-orange-500 hover:bg-black hover:text-white px-5">
                                     Login
                                 </Link>
                 }

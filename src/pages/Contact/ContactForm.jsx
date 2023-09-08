@@ -8,7 +8,7 @@ const ContactForm = () => {
     return (
         <div>
             <SectionTitle subHeading={"Send Us a Message"} heading={"CONTACT FORM"}></SectionTitle>
-            <div className="w-1/2 mx-auto mt-10 bg-orange-100 p-10 mb-10">
+            <div className="full mt-10 bg-orange-100 p-10 mb-10">
                 <form >
                     <div className="flex">
                         <div className="mb-4 w-1/2">
